@@ -14,10 +14,10 @@ public class assertsCommentDto {
     public static void assertNotNullFieldsCommentDto(Response<List<CommentDto>> response) {
         List<CommentDto> body = response.body();
         assert body != null;
-        body.forEach((post) -> assertNotNull(post.getPostId()));
-        body.forEach((post) -> assertNotNull(post.getId()));
-        body.forEach((post) -> assertNotNull(post.getName()));
-        body.forEach((post) -> assertNotNull(post.getEmail()));
-        body.forEach((post) -> assertNotNull(post.getBody()));
+        body.forEach((post) -> assertNotNull(post.getPostId(), "Поле PostId = null"));
+        body.forEach((post) -> assertNotNull(post.getId(), "Поле Id = null"));
+        body.forEach((post) -> assertNotNull(post.getName(), "Поле Name = null"));
+        body.forEach((post) -> assertNotNull(post.getEmail(), "Поле mail = null"));
+        body.forEach((post) -> assertNotNull(post.getBody(), "Поле Body = null"));
     }
 }

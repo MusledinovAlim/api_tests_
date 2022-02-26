@@ -43,11 +43,11 @@ public class BaseTest {
 
     @Step("Проверка, что статус код {expectedStatusCode}")
     public static void assertStatusCode(Response response, int expectedStatusCode) {
-        assertEquals(expectedStatusCode, response.code());
+        assertEquals(expectedStatusCode, response.code(), "Статус код: " + response.code() + ",а ожидали: " + expectedStatusCode);
     }
 
     @Step("Проверка наличия Headers( в response)")
     public static void assertNotNullHeaders(Response response) {
-        assertNotNull(response.headers().toString());
+        assertNotNull(response.headers().toString(),"headers отсутствуют");
     }
 }
